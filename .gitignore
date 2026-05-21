@@ -1,0 +1,35 @@
+# Virtual Environment
+backend/venv/
+venv/
+env/
+ENV/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Environment variables
+.env
+.env.local
+
+# Database
+*.db
+database.db
+
+# IDE
+.vscode/
+.idea/
+*.code-workspace
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Uploads and reports (can add after initial push)
+frontend/reports/
+backend/uploads/
+
+# Node modules (if using any frontend build tools)
+node_modules/
