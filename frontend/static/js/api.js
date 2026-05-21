@@ -1,9 +1,11 @@
 /**
  * Mental Health Trend Analyzer - API Interaction Controller for Real-Time Analytics
  * Secured with Session Lock to prevent Live Server auto-refresh data loss
+ * Synchronized with Live Render Cloud Infrastructure
  */
 
-const BASE_API_URL = "http://127.0.0.1:5000/api";
+// CLOUD UPDATE: Localhost bridge shifted to live production URL endpoint context
+const BASE_API_URL = "https://mental-health-trend-analyzer.onrender.com/api";
 
 document.addEventListener('DOMContentLoaded', () => {
     
