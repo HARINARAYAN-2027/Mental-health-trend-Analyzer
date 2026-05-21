@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mental Health Trend Analyzer | System Architecture</title>
+    <link rel="stylesheet" href="static/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <nav>
+        <div class="logo"><i class="fa-solid fa-brain"></i> Mental Health Trend Analyzer</div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="analyzer.html">Analyzer</a></li>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="trends.html">Trends</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main class="main-container" style="max-width: 1100px; margin-top: 2rem;">
+        
+        <section style="text-align: center; margin-bottom: 5rem;">
+            <h1 style="font-size: 2.5rem; font-weight: 700; margin-bottom: 1.2rem; background: linear-gradient(to right, #a78bfa, #60a5fa); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+                Our Methodological Mission
+            </h1>
+            <p style="color: var(--text-muted); font-size: 1.1rem; max-width: 800px; margin: 0 auto; line-height: 1.7;">
+                Mental Health Trend Analyzer is an algorithmic assessment platform that converts raw text and unstructured social media feeds into standard sentiment vectors. Using local linguistic models, we produce analytical snapshots of public sentiments and emotional triggers.
+            </p>
+        </section>
+
+        <h2 style="font-size: 1.6rem; font-weight: 600; text-align: center; margin-bottom: 2.5rem;"><i class="fa-solid fa-gears" style="color: var(--accent-blue);"></i> Data Processing Pipeline</h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-bottom: 5rem;">
+            
+            <div class="glass-card">
+                <span style="background: rgba(59, 130, 246, 0.15); color: var(--accent-blue); padding: 4px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: 600; border: 1px solid rgba(59, 130, 246, 0.3);">PHASE 01</span>
+                <h3 style="margin: 1.2rem 0 0.6rem 0; font-size: 1.2rem;">Tokenization & Cleaning</h3>
+                <p style="color: var(--text-muted); font-size: 0.88rem;">Special tags (#, @), HTTP URLs and irrelevant stop-words are cleaned from raw string sequences to generate base text for semantic parsing.</p>
+            </div>
+
+            <div class="glass-card">
+                <span style="background: rgba(139, 92, 246, 0.15); color: var(--accent-purple); padding: 4px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: 600; border: 1px solid rgba(139, 92, 246, 0.3);">PHASE 02</span>
+                <h3 style="margin: 1.2rem 0 0.6rem 0; font-size: 1.2rem;">Linguistic Scoring</h3>
+                <p style="color: var(--text-muted); font-size: 0.88rem;">Using TextBlob and NLTK corpora matching layers, lexical density and mathematical polarity metrics are extracted from text segments.</p>
+            </div>
+
+            <div class="glass-card">
+                <span style="background: rgba(16, 185, 129, 0.15); color: #10b981; padding: 4px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: 600; border: 1px solid rgba(16, 185, 129, 0.3);">PHASE 03</span>
+                <h3 style="margin: 1.2rem 0 0.6rem 0; font-size: 1.2rem;">Metric Rendering</h3>
+                <p style="color: var(--text-muted); font-size: 0.88rem;">Computed outputs and risk probabilities are rendered in dashboard structures and on-demand programmatic reports can be exported in PDF format.</p>
+            </div>
+
+        </div>
+
+        <div class="glass-card" style="text-align: center; border: 1px dashed var(--glass-border); padding: 3rem 2rem;">
+            <h3 style="font-size: 1.3rem; font-weight: 600; margin-bottom: 2.5rem;"><i class="fa-solid fa-layer-group" style="color: var(--accent-purple);"></i> Technical Framework Infrastructure</h3>
+            <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 3.5rem;">
+                <div style="text-align: center;"><i class="fa-brands fa-python" style="font-size: 2.5rem; color: #3776ab;"></i><p style="font-size: 0.85rem; margin-top: 8px; color: var(--text-muted);">Python Flask</p></div>
+                <div style="text-align: center;"><i class="fa-brands fa-js" style="font-size: 2.5rem; color: #f7df1e;"></i><p style="font-size: 0.85rem; margin-top: 8px; color: var(--text-muted);">Vanilla JS</p></div>
+                <div style="text-align: center;"><i class="fa-solid fa-database" style="font-size: 2.5rem; color: #003b57;"></i><p style="font-size: 0.85rem; margin-top: 8px; color: var(--text-muted);">SQLite3</p></div>
+                <div style="text-align: center;"><i class="fa-solid fa-chart-simple" style="font-size: 2.5rem; color: #ff6384;"></i><p style="font-size: 0.85rem; margin-top: 8px; color: var(--text-muted);">Chart.js</p></div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer>
+        <p>© 2026 Mental Health Trend Analyzer. Secure Local Sandbox Workspace.</p>
+    </footer>
+
+    <script src="static/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mental Health Trend Analyzer | Administrative Dashboard</title>
+    <link rel="stylesheet" href="static/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body style="display: flex; background: var(--bg-primary); min-height: 100vh;">
+
+    <aside style="width: 280px; background: rgba(15, 23, 42, 0.85); backdrop-filter: var(--blur-effect); border-right: 1px solid var(--glass-border); padding: 2.5rem 1.5rem; position: fixed; height: 100vh; z-index: 10;">
+        <div class="logo" style="margin-bottom: 3.5rem; font-size: 1.6rem; font-weight: 700; background: linear-gradient(to right, #a78bfa, #60a5fa); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+            <i class="fa-solid fa-brain"></i> Mental Health Trend Analyzer
+        </div>
+        
+        <ul style="list-style: none; display: flex; flex-direction: column; gap: 1.2rem;">
+            <li><a href="dashboard.html" style="color: var(--accent-blue); text-decoration: none; font-weight: 600; display: flex; align-items: center; gap: 12px;"><i class="fa-solid fa-chart-pie"></i> Data Overview</a></li>
+            <li><a href="analyzer.html" style="color: var(--text-main); text-decoration: none; display: flex; align-items: center; gap: 12px; opacity: 0.8; transition: 0.3s;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.8"><i class="fa-solid fa-microscope"></i> Live Engine</a></li>
+            <li><a href="trends.html" style="color: var(--text-main); text-decoration: none; display: flex; align-items: center; gap: 12px; opacity: 0.8; transition: 0.3s;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.8"><i class="fa-solid fa-arrow-trend-up"></i> Historical Trends</a></li>
+            <li><a href="#" id="btn-download-pdf-report" style="color: #fca5a5; text-decoration: none; display: flex; align-items: center; gap: 12px;"><i class="fa-solid fa-file-pdf"></i> Download PDF</a></li>
+            <li style="margin-top: 8rem; border-top: 1px solid var(--glass-border); padding-top: 1.5rem;">
+                <a href="index.html" style="color: var(--text-muted); text-decoration: none; display: flex; align-items: center; gap: 12px;"><i class="fa-solid fa-house"></i> Exit Workspace</a>
+            </li>
+        </ul>
+    </aside>
+
+    <main style="margin-left: 280px; width: calc(100% - 280px); padding: 3rem 4%;">
+        
+        <header style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 3rem; border-bottom: 1px solid var(--glass-border); padding-bottom: 1.5rem;">
+            <div>
+                <h1 style="font-size: 2.2rem; font-weight: 700; letter-spacing: -0.5px;">Analytical Workspace</h1>
+                <p style="color: var(--text-muted); font-size: 0.9rem;">Real-time dataset summaries and extracted emotional distribution metrics.</p>
+            </div>
+            <div class="glass-card" style="padding: 0.6rem 1.4rem; border-radius: 30px; display: flex; align-items: center; gap: 10px; font-weight: 500;">
+                <div style="width: 8px; height: 8px; background: #10b981; border-radius: 50%; box-shadow: 0 0 10px #10b981;"></div>
+                Secured Workspace Session
+            </div>
+        </header>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.8rem; margin-bottom: 3.5rem;">
+            <div class="glass-card" style="position: relative; overflow: hidden;">
+                <p style="color: var(--text-muted); font-size: 0.85rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px;">Total Logs Processed</p>
+                <h2 id="dash-total-logs" style="font-size: 2.5rem; font-weight: 700; margin-top: 0.5rem; background: linear-gradient(to right, #fff, var(--text-muted)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">10</h2>
+                <i class="fa-solid fa-database" style="position: absolute; right: 1.5rem; bottom: 1.5rem; font-size: 2.5rem; opacity: 0.05;"></i>
+            </div>
+            <div class="glass-card" style="position: relative; overflow: hidden;">
+                <p style="color: var(--text-muted); font-size: 0.85rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px;">Prevailing Risk Factor</p>
+                <h2 id="dash-risk-factor" style="font-size: 2.5rem; font-weight: 700; margin-top: 0.5rem; color: #f59e0b;">Low Risk</h2>
+                <i class="fa-solid fa-triangle-exclamation" style="position: absolute; right: 1.5rem; bottom: 1.5rem; font-size: 2.5rem; opacity: 0.05;"></i>
+            </div>
+            <div class="glass-card" style="position: relative; overflow: hidden;">
+                <p style="color: var(--text-muted); font-size: 0.85rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px;">Positive Ratio Density</p>
+                <h2 id="dash-positive-ratio" style="font-size: 2.5rem; font-weight: 700; margin-top: 0.5rem; color: #10b981;">60%</h2>
+                <i class="fa-solid fa-heart-pulse" style="position: absolute; right: 1.5rem; bottom: 1.5rem; font-size: 2.5rem; opacity: 0.05;"></i>
+            </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1.2fr; gap: 2.5rem;">
+            
+            <div class="glass-card">
+                <h3 style="font-size: 1.2rem; margin-bottom: 1.5rem; font-weight: 600;"><i class="fa-solid fa-pie-chart" style="color: var(--accent-purple); margin-right: 8px;"></i> Sentiment Proportions</h3>
+                <div style="position: relative; height: 320px; width: 100%; display: flex; align-items: center; justify-content: center;">
+                    <canvas id="canvas-sentiment-doughnut"></canvas>
+                </div>
+            </div>
+
+            <div class="glass-card">
+                <h3 style="font-size: 1.2rem; margin-bottom: 1.5rem; font-weight: 600;"><i class="fa-solid fa-chart-bar" style="color: var(--accent-blue); margin-right: 8px;"></i> Mental Health Threat Categorization</h3>
+                <div style="position: relative; height: 320px; width: 100%;">
+                    <canvas id="canvas-risk-bar"></canvas>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="static/js/charts.js"></script>
+</body>
+</html>

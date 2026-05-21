@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mental Health Trend Analyzer | Authentication Gateway</title>
+    <link rel="stylesheet" href="static/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <nav>
+        <div class="logo"><i class="fa-solid fa-brain"></i> Mental Health Trend Analyzer</div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="analyzer.html">Analyzer</a></li>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>
+    </nav>
+
+    <main class="main-container" style="display: flex; justify-content: center; align-items: center; min-height: 75vh;">
+        
+        <div class="glass-card" style="width: 100%; max-width: 450px; padding: 2.5rem 2rem;" id="auth-card-container">
+            
+            <div style="display: flex; margin-bottom: 2rem; border-bottom: 1px solid var(--glass-border); padding-bottom: 0.5rem;">
+                <button id="tab-login" style="flex: 1; background: none; border: none; color: var(--accent-blue); font-size: 1.1rem; font-weight: 600; cursor: pointer; padding: 0.5rem 0; border-bottom: 2px solid var(--accent-blue); transition: 0.3s;">Sign In</button>
+                <button id="tab-register" style="flex: 1; background: none; border: none; color: var(--text-muted); font-size: 1.1rem; font-weight: 500; cursor: pointer; padding: 0.5rem 0; transition: 0.3s;">Create Account</button>
+            </div>
+
+            <form id="form-login" style="display: flex; flex-direction: column; gap: 1.2rem;">
+                <h3 style="font-size: 1.3rem; font-weight: 600; margin-bottom: 0.3rem;">Welcome Back</h3>
+                <p style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 0.5rem;">Resume access with your security credentials.</p>
+                
+                <div style="display: flex; flex-direction: column; gap: 0.4rem;">
+                    <label style="font-size: 0.85rem; color: var(--text-muted);"><i class="fa-solid fa-user-shield"></i> Username</label>
+                    <input type="text" id="login-username" placeholder="Enter username..." required
+                        style="width: 100%; background: rgba(0,0,0,0.25); border: 1px solid var(--glass-border); border-radius: 8px; padding: 0.75rem 1rem; color: white; outline: none;">
+                </div>
+
+                <div style="display: flex; flex-direction: column; gap: 0.4rem;">
+                    <label style="font-size: 0.85rem; color: var(--text-muted);"><i class="fa-solid fa-lock"></i> Password</label>
+                    <input type="password" id="login-password" placeholder="••••••••" required
+                        style="width: 100%; background: rgba(0,0,0,0.25); border: 1px solid var(--glass-border); border-radius: 8px; padding: 0.75rem 1rem; color: white; outline: none;">
+                </div>
+
+                <button type="submit" class="btn-primary" style="width: 100%; justify-content: center; margin-top: 1rem; font-size: 1rem;">
+                    Secure Sign In <i class="fa-solid fa-right-to-bracket"></i>
+                </button>
+            </form>
+
+            <form id="form-register" style="display: none; flex-direction: column; gap: 1.2rem;">
+                <h3 style="font-size: 1.3rem; font-weight: 600; margin-bottom: 0.3rem;">Registration Gateway</h3>
+                <p style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 0.5rem;">Create your profile to join the Mental Health Trend Analyzer monitoring space.</p>
+                
+                <div style="display: flex; flex-direction: column; gap: 0.4rem;">
+                    <label style="font-size: 0.85rem; color: var(--text-muted);"><i class="fa-solid fa-user"></i> Username</label>
+                    <input type="text" id="reg-username" placeholder="Pick a unique username..." required
+                        style="width: 100%; background: rgba(0,0,0,0.25); border: 1px solid var(--glass-border); border-radius: 8px; padding: 0.75rem 1rem; color: white; outline: none;">
+                </div>
+
+                <div style="display: flex; flex-direction: column; gap: 0.4rem;">
+                    <label style="font-size: 0.85rem; color: var(--text-muted);"><i class="fa-solid fa-envelope"></i> Email Address</label>
+                    <input type="email" id="reg-email" placeholder="name@example.com" required
+                        style="width: 100%; background: rgba(0,0,0,0.25); border: 1px solid var(--glass-border); border-radius: 8px; padding: 0.75rem 1rem; color: white; outline: none;">
+                </div>
+
+                <div style="display: flex; flex-direction: column; gap: 0.4rem;">
+                    <label style="font-size: 0.85rem; color: var(--text-muted);"><i class="fa-solid fa-lock"></i> Password</label>
+                    <input type="password" id="reg-password" placeholder="Minimum 6 characters..." required
+                        style="width: 100%; background: rgba(0,0,0,0.25); border: 1px solid var(--glass-border); border-radius: 8px; padding: 0.75rem 1rem; color: white; outline: none;">
+                </div>
+
+                <div style="display: flex; flex-direction: column; gap: 0.4rem;">
+                    <label style="font-size: 0.85rem; color: var(--text-muted);"><i class="fa-solid fa-circle-check"></i> Confirm Password</label>
+                    <input type="password" id="reg-confirm" placeholder="Repeat password..." required
+                        style="width: 100%; background: rgba(0,0,0,0.25); border: 1px solid var(--glass-border); border-radius: 8px; padding: 0.75rem 1rem; color: white; outline: none;">
+                </div>
+
+                <button type="submit" class="btn-primary" style="width: 100%; justify-content: center; margin-top: 1rem; background: linear-gradient(135deg, var(--accent-purple), #ec4899); font-size: 1rem;">
+                    Register Profile <i class="fa-solid fa-user-plus"></i>
+                </button>
+            </form>
+
+        </div>
+    </main>
+
+    <script src="static/js/auth.js"></script>
+</body>
+</html>

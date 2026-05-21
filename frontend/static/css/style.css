@@ -1,0 +1,166 @@
+/* ==========================================================================
+   Mental Health Trend Analyzer - Global CSS Style (Glassmorphism & Theme Variables)
+   Optimized for Fixed UI Rendering and Dynamic Injections
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+    /* Color Palette (Blue/Purple Theme) */
+    --bg-primary: radial-gradient(circle at top right, #1e1b4b, #0f172a, #020617);
+    --accent-purple: #8b5cf6;
+    --accent-blue: #3b82f6;
+    --text-main: #f1f5f9;
+    --text-muted: #94a3b8;
+    
+    /* Glassmorphic Properties */
+    --glass-bg: rgba(255, 255, 255, 0.03);
+    --glass-border: rgba(255, 255, 255, 0.08);
+    --glass-hover-border: rgba(255, 255, 255, 0.2);
+    --blur-effect: blur(12px);
+    --card-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+/* Base Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: var(--bg-primary);
+    color: var(--text-main);
+    min-height: 100vh;
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+/* Glassmorphism Card Style Component */
+.glass-card {
+    background: var(--glass-bg);
+    backdrop-filter: var(--blur-effect);
+    -webkit-backdrop-filter: var(--blur-effect);
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: var(--card-shadow);
+    /* Safe transform layer to prevent structural collapse on JS triggers */
+    transform: translateY(0);
+    will-change: transform, opacity;
+    transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.glass-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--glass-hover-border);
+    box-shadow: 0 12px 40px 0 rgba(139, 92, 246, 0.12);
+}
+
+/* Dynamic State Display Containers (Stops automatic hiding/glitching) */
+#analytics-result-state, #placeholder-state {
+    width: 100%;
+    animation: fadeInStable 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes fadeInStable {
+    from {
+        opacity: 0;
+        transform: scale(0.98);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Global Navigation Styles */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem 5%;
+    background: rgba(15, 23, 42, 0.7);
+    backdrop-filter: var(--blur-effect);
+    border-bottom: 1px solid var(--glass-border);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav .logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    background: linear-gradient(to right, #a78bfa, #60a5fa);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    align-items: center;
+}
+
+nav ul li a {
+    color: var(--text-main);
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 0.95rem;
+    transition: color 0.2s ease;
+}
+
+nav ul li a:hover, nav ul li a.active {
+    color: var(--accent-blue);
+}
+
+/* Buttons Styling */
+.btn-primary {
+    background: linear-gradient(135deg, var(--accent-purple), var(--accent-blue));
+    color: #ffffff;
+    border: none;
+    padding: 0.75rem 1.8rem;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-primary:hover {
+    opacity: 0.95;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
+}
+
+.btn-primary:disabled {
+    background: #475569 !important;
+    cursor: not-allowed;
+    transform: none !important;
+    box-shadow: none !important;
+    opacity: 0.6;
+}
+
+/* Standard Layout Containers */
+.main-container {
+    padding: 3rem 5%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+footer {
+    text-align: center;
+    padding: 2.5rem;
+    color: var(--text-muted);
+    border-top: 1px solid var(--glass-border);
+    margin-top: 5rem;
+    font-size: 0.9rem;
+}

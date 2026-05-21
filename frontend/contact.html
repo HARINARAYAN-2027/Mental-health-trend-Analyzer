@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mental Health Trend Analyzer | Contact Support</title>
+    <link rel="stylesheet" href="static/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Custom local adjustments for Form Fields Alignment */
+        .form-group {
+            margin-bottom: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        .form-group label {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+        .form-control {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--glass-border);
+            border-radius: 10px;
+            padding: 0.75rem 1rem;
+            color: var(--text-main);
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.95rem;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+            width: 100%;
+        }
+        .form-control:focus {
+            outline: none;
+            border-color: var(--accent-blue);
+            box-shadow: 0 0 10px rgba(59, 130, 246, 0.2);
+            background: rgba(255, 255, 255, 0.04);
+        }
+        .contact-info-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 1.5rem;
+        }
+        .contact-info-item i {
+            font-size: 1.2rem;
+            color: var(--accent-blue);
+            background: rgba(59, 130, 246, 0.1);
+            padding: 12px;
+            border-radius: 50%;
+            width: 45px;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo"><i class="fa-solid fa-brain"></i> Mental Health Trend Analyzer</div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="analyzer.html">Analyzer</a></li>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="trends.html">Trends</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html" class="active">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main class="main-container" style="margin-top: 1.5rem;">
+        
+        <header style="margin-bottom: 3.5rem; text-align: center;">
+            <h1 style="font-size: 2.5rem; font-weight: 700; background: linear-gradient(to right, #fff, var(--text-muted)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Get In Touch</h1>
+            <p style="color: var(--text-muted); font-size: 0.95rem; margin-top: 0.5rem; max-width: 600px; margin-left: auto; margin-right: auto;">Connect with us for Mental Health Trend Analyzer platform support, feedback submissions, or strategic development collaborations.</p>
+        </header>
+
+        <div style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 3.5rem; align-items: start;">
+            
+            <div class="glass-card">
+                <h3 style="font-size: 1.3rem; margin-bottom: 1.5rem; font-weight: 600;"><i class="fa-solid fa-envelope-open-text" style="color: var(--accent-purple); margin-right: 8px;"></i> Send Us A Message</h3>
+                
+                <form id="contact-form-pipeline">
+                    <div class="form-group">
+                        <label for="contact-name">Full Name</label>
+                        <input type="text" id="contact-name" class="form-control" placeholder="Enter your name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="contact-email">Email Address</label>
+                        <input type="email" id="contact-email" class="form-control" placeholder="name@example.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="contact-subject">Subject</label>
+                        <input type="text" id="contact-subject" class="form-control" placeholder="Subject of your inquiry" required>
+                    </div>
+                    
+                    <div class="form-group" style="margin-bottom: 2rem;">
+                        <label for="contact-message">Message / Feedback</label>
+                        <textarea id="contact-message" class="form-control" rows="5" placeholder="Share your thoughts or feedback in detail..." style="resize: none;" required></textarea>
+                    </div>
+                    
+                    <button type="submit" id="btn-submit-contact" class="btn-primary" style="width: 100%; justify-content: center; padding: 0.9rem;">
+                        <span id="contact-btn-normal">Submit Ticket <i class="fa-solid fa-paper-plane"></i></span>
+                        <span id="contact-btn-spinner" style="display: none;"><i class="fa-solid fa-circle-notch fa-spin"></i> Processing...</span>
+                    </button>
+                </form>
+            </div>
+
+            <div style="display: flex; flex-direction: column; gap: 2rem;">
+                
+                <div class="glass-card">
+                    <h3 style="font-size: 1.2rem; margin-bottom: 1.5rem; font-weight: 600;">Workspace Hub</h3>
+                    
+                    <div class="contact-info-item">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <div>
+                            <p style="font-size: 0.8rem; color: var(--text-muted); font-weight: 500; text-transform: uppercase;">Location</p>
+                            <p style="font-size: 0.95rem; font-weight: 500;">IIT Patna Campus, Bihta, Bihar, India</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-info-item">
+                        <i class="fa-solid fa-envelope"></i>
+                        <div>
+                            <p style="font-size: 0.8rem; color: var(--text-muted); font-weight: 500; text-transform: uppercase;">Official Email</p>
+                            <p style="font-size: 0.95rem; font-weight: 500;">support@mental-health-trend-analyzer.online</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-info-item" style="margin-bottom: 0;">
+                        <i class="fa-solid fa-shield-halved"></i>
+                        <div>
+                            <p style="font-size: 0.8rem; color: var(--text-muted); font-weight: 500; text-transform: uppercase;">Data Privacy</p>
+                            <p style="font-size: 0.95rem; font-weight: 500;">100% Encrypted Sandbox Database</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-card" style="border-color: rgba(239, 68, 68, 0.15); background: rgba(239, 68, 68, 0.01);">
+                    <h3 style="font-size: 1.15rem; margin-bottom: 0.5rem; font-weight: 600; color: #ef4444;"><i class="fa-solid fa-heart-pulse"></i> Immediate Assistance</h3>
+                    <p style="color: var(--text-muted); font-size: 0.85rem; line-height: 1.5;">If you or someone you know is in severe mental distress or panic condition, please do not wait for support tickets. Please reach out immediately to national toll-free helplines (KIRAN Helpline: <b>1800-599-0019</b>). Human life is most precious.</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const contactForm = document.getElementById('contact-form-pipeline');
+            const submitBtn = document.getElementById('btn-submit-contact');
+            const btnNormal = document.getElementById('contact-btn-normal');
+            const btnSpinner = document.getElementById('contact-btn-spinner');
+
+            if (contactForm) {
+                contactForm.addEventListener('submit', (e) => {
+                    // PROTECTION: Prevent page reload when form is submitted
+                    e.preventDefault();
+                    e.stopPropagation();
+
+                    // Loading State toggling UI changes
+                    btnNormal.style.display = 'none';
+                    btnSpinner.style.display = 'inline-flex';
+                    submitBtn.disabled = true;
+
+                    // Simulated safe API endpoint response window timeout sequence
+                    setTimeout(() => {
+                        alert("Thank you! Your message has been recorded in our support queue. We will contact you shortly.");
+                        
+                        // Reset all input tokens fields safely
+                        contactForm.reset();
+                        
+                        // Restore default button structures state layouts
+                        btnNormal.style.display = 'inline-flex';
+                        btnSpinner.style.display = 'none';
+                        submitBtn.disabled = false;
+                    }, 1200);
+
+                    return false;
+                });
+            }
+        });
+    </script>
+
+</body>
+</html>
