@@ -1,10 +1,12 @@
 /**
  * Mental Health Trend Analyzer - Dashboard Chart Processing Engine
  * Optimized for Dynamic REST Sync & Prevent Structural Mismatches
+ * Synchronized with Live Render Cloud Infrastructure
  */
 
 document.addEventListener('DOMContentLoaded', async () => {
-    const API_BASE = "http://127.0.0.1:5000/api";
+    // CLOUD UPDATE: Redirecting localhost routing bridge to live cloud server context
+    const API_BASE = "https://mental-health-trend-analyzer.onrender.com/api";
     const userId = localStorage.getItem('mentalflow_user_id') || 1;
 
     // Default Fallback Metrics setup (In case database or endpoints are offline)
@@ -18,7 +20,6 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     try {
         // Fetch dynamic analytical matrices from actual backend tables context
-        // Note: If you've changed the analytics endpoint name, replace it with dashboard-stats or reports
         const response = await fetch(`${API_BASE}/dashboard-stats?userId=${userId}`);
         
         if (response.ok) {
@@ -26,13 +27,15 @@ document.addEventListener('DOMContentLoaded', async () => {
             console.log("Live dynamic analytical metrics synced from database layers.");
             
             // Re-assigning backend computed data array lengths safely
-            totalLogs = serverData.total_logs || totalLogs;
-            positiveCount = serverData.counts.positive !== undefined ? serverData.counts.positive : positiveCount;
-            negativeCount = serverData.counts.negative !== undefined ? serverData.counts.negative : negativeCount;
-            neutralCount = serverData.counts.neutral !== undefined ? serverData.counts.neutral : neutralCount;
-            lowRiskCount = serverData.counts.low_risk !== undefined ? serverData.counts.low_risk : lowRiskCount;
-            moderateRiskCount = serverData.counts.mod_risk !== undefined ? serverData.counts.mod_risk : moderateRiskCount;
-            highRiskCount = serverData.counts.high_risk !== undefined ? serverData.counts.high_risk : highRiskCount;
+            totalLogs = serverData.total_logs !== undefined ? serverData.total_logs : totalLogs;
+            if (serverData.counts) {
+                positiveCount = serverData.counts.positive !== undefined ? serverData.counts.positive : positiveCount;
+                negativeCount = serverData.counts.negative !== undefined ? serverData.counts.negative : negativeCount;
+                neutralCount = serverData.counts.neutral !== undefined ? serverData.counts.neutral : neutralCount;
+                lowRiskCount = serverData.counts.low_risk !== undefined ? serverData.counts.low_risk : lowRiskCount;
+                moderateRiskCount = serverData.counts.mod_risk !== undefined ? serverData.counts.mod_risk : moderateRiskCount;
+                highRiskCount = serverData.counts.high_risk !== undefined ? serverData.counts.high_risk : highRiskCount;
+            }
         } else {
             // Internal framework handshake check fallback route
             const checkResponse = await fetch(`${API_BASE}/health-check`);
