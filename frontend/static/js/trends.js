@@ -1,9 +1,11 @@
 /**
  * Mental Health Trend Analyzer - Timeline Trend Waveform Visualizer Engine
+ * Synchronized with Live Render Cloud Infrastructure
  */
 
 document.addEventListener('DOMContentLoaded', async () => {
-    const API_BASE = "http://127.0.0.1:5000/api";
+    // CLOUD UPDATE: Shifting base routing from local development port to live environment
+    const API_BASE = "https://mental-health-trend-analyzer.onrender.com/api";
     const userId = localStorage.getItem('mentalflow_user_id') || 1;
     const canvasTrends = document.getElementById('canvas-trends-timeline');
 
